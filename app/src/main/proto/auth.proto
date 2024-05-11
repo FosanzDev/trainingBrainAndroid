@@ -1,0 +1,78 @@
+syntax="proto3";
+
+option java_package = "com.fosanzdev.trainingbrain.auth";
+option java_multiple_files = true;
+
+service AuthService {
+  // Login is used to create a new login request
+  rpc Login(LoginRequest) returns (LoginResponse);
+
+  // Verification is used to authenticate a user
+  // It completes the login and registration flow
+  rpc Verify(VerifyRequest) returns (VerifyResponse);
+
+  // RefreshToken is used to refresh the access token
+  // last access token and refresh token are required
+  rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
+
+  // Register is used to create a new user
+  rpc Register(RegisterRequest) returns (RegisterResponse);
+
+  // Logout is used to logout a user
+  rpc Logout(LogoutRequest) returns (LogoutResponse);
+
+}
+
+// Login
+
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  string authToken = 1;
+}
+
+// Verify
+message VerifyRequest {
+  string username = 1;
+  string password = 2;
+  string authToken = 3;
+}
+
+message VerifyResponse {
+  string accessToken = 1;
+  string refreshToken = 2;
+}
+
+// RefreshToken
+message RefreshTokenRequest {
+  string accessToken = 1;
+  string refreshToken = 2;
+}
+
+message RefreshTokenResponse {
+  string accessToken = 1;
+}
+
+// Register
+message RegisterRequest {
+  string name = 1;
+  string username = 2;
+  string password = 3;
+}
+
+message RegisterResponse {
+  string authToken = 1;
+}
+
+// Logout
+message LogoutRequest {
+  string username = 1;
+  string refreshToken = 2;
+}
+
+message LogoutResponse {
+  bool logout = 1;
+}
