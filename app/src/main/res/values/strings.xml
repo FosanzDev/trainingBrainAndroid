@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">trainingBrain</string>
+    <string name="app_name" translatable="false">Training Brain</string>
+    <string name="app_slogan">Fortaleciendo el futuro,\ncuidando el presente</string>
+    <string name="not_registered">¿Aún no tienes cuenta?\n¡Registrate!</string>
+    <string name="login_button_text">Entrar</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="password">Contraseña</string>
 </resources>

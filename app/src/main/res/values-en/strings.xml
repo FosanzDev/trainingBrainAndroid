@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Training Brain</string>
+    <string name="app_slogan">Strengthening the future,\ncaring for the present</string>
+    <string name="not_registered">Don\'t have an account?\nRegister now!</string>
+    <string name="login_button_text">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+</resources>
